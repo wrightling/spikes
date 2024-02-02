@@ -1,24 +1,8 @@
-# README
+# Battle Net API Spike
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Battle Net API Secrets
+Include client ID and client Secret in separate `/secrets` in separate files, such as:
+```
+echo -n "bnet client id value" >> secrets/bnet_api_client_id.txt
+echo -n "bnet secret value" >> secrets/bnet_api_secret.txt"
+```

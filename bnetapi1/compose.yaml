@@ -7,6 +7,12 @@ services:
       - .:/app
       - bashhistory:/commandhistory
       - rails-gems:/gems
+    environment:
+      BNET_CLIENT_ID_FILE: /run/secrets/bnet_api_client_id
+      BNET_CLIENT_SECRET_FILE: /run/secrets/bnet_api_secret
+    secrets:
+      - bnet_api_client_id
+      - bnet_api_secret
     ports:
       - "3001:3001"
     command: bundle exec rails s -b '0.0.0.0' -p 3001
@@ -14,3 +20,8 @@ services:
 volumes:
   rails-gems:
   bashhistory:
+secrets:
+  bnet_api_client_id:
+    file: secrets/bnet_api_client_id.txt
+  bnet_api_secret:
+    file: secrets/bnet_api_secret.txt
