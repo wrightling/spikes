@@ -14,7 +14,16 @@ class Bnet
     @token
   end
 
+  def connection
+    Faraday.new(
+      url: 'https://us.api.blizzard.com/data/wow/playable-class/index',
+      params: { "locale": "en_US" },
+      headers: { "Authorization": "Bearer #{token.token}", "Battlenet-Namespace": "static-us" }
+    )
+  end
+
   def test
+    connection.get
   end
 
   private
