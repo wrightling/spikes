@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  react-app:
+    build: .
+    volumes:
+      - .:/app
+      - bashhistory:/commandhistory
+    ports:
+      - "3000:3000"
+    # command: npm start
+
+volumes:
+  bashhistory:
